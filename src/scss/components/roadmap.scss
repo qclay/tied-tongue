@@ -1,0 +1,227 @@
+.roadmap{
+    padding: 85px 0 150px;
+}
+.roadmap__container{
+
+    .center{
+        text-align: center;
+    }
+}
+.roadmap__title{
+    position: relative;
+    display: inline-block;
+
+    @include curvilingus{
+        font-size: 140.307px;
+        line-height: 0.95;
+
+        text-align: center;
+        letter-spacing: 0.01em;
+        text-transform: capitalize;
+
+        color: #FB1D1D;
+    }
+
+    &:after,
+    &:before{
+        content: "";
+        display: block;
+        width: 95px;
+        height: 98px;
+        background: url(../assets/images/roadmap/redstar.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &:after{
+        left: calc(100% + 20px);
+    }
+    &:before{
+        right: calc(100% + 20px);
+    }
+
+    @media (max-width: 991px){
+        font-size: 14.127vw;
+        
+        &:after,
+        &:before{
+            width: 9.58vw;
+            height: 9.88vw;
+        }
+        &:after{
+            left: calc(100% + 2.01vw);
+        }
+        &:before{
+            right: calc(100% + 2.01vw);
+        }
+    }
+}
+.roadmap__list{
+    max-width: 1067px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    margin: 5px auto 0;
+    padding: 70px 24px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 565px){
+        padding: 38px 24px 32px;
+    }
+}
+.roadmap__item{
+    max-width: 918px;
+    width: 100%;
+    // background-image: url(../assets/images/roadmap/back-t-2.png);
+    // background-position: left top;
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 54px 94px -66px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px 51px 36px 70px;
+    position: relative;
+
+    + .roadmap__item{
+        margin-top: 30px;
+    }
+
+    &.bg-first{
+        // background-image: url(../assets/images/roadmap/back-t-1.png);
+    }
+    &.bg-no-back{
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 565px){
+        padding: 23px 30px;
+    }
+}
+.roadmap-item__drop { 
+    position: absolute;
+
+    &.hide{
+        display: none;
+
+        @media (max-width: 565px){
+            display: block;
+        }
+    }
+}
+.roadmap-item__drop_dbl { 
+    max-width: 141px;
+    top: 0;
+    right: 15.03%;
+    transform: translateY(-50%);
+
+    @media (max-width: 565px){
+        max-width: 89px;
+    }
+}
+.roadmap-item__drop_t { 
+    max-width: 83px;
+    left: 13.18%;
+    top: 0;
+    transform: translateY(-50%);
+
+    @media (max-width: 565px){
+        max-width: 70px;
+    }
+}
+.roadmap-item__drop_l { 
+    max-width: 16px;
+    top: 90px;
+    left: 0;
+    transform: translateX(-50%);
+
+    @media (max-width: 565px){
+        max-width: 13px;
+    }
+}
+.roadmap__item-title { 
+    @include mazzard(800){
+        font-size: 40px;
+        line-height: 0.8;
+        letter-spacing: 0.01em;
+
+        color: #333132;
+    }
+    &.red{
+        color: #F02D2D;
+    }
+    @media (max-width: 565px){
+        font-size: 24px;
+    }
+}
+.roadmap__item-text { 
+    margin-top: 27px;
+
+    @include mazzard(400){
+        font-size: 17px;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+
+        color: #000000;
+    }
+
+    @media (max-width: 565px){
+        margin-top: 8px;
+        font-size: 16px;
+    }
+}
+.roadmap__item-card{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+
+    &.club{
+        transform: translate(-40%, 3px);
+        max-width: 107px;
+        max-height: 100px;
+    }
+    &.diamond{
+        transform: translate(-40%, -15px);
+        max-width: 100px;
+        max-height: 110px;
+    }
+    &.spade{
+        transform: translate(-40%, -6px);
+        max-width: 101px;
+        max-height: 102px;
+    }
+    &.heart{
+        transform: translate(-40%, 15px);
+        max-width: 73px;
+        max-height: 63 px;
+    }
+    @media (max-width: 565px){
+        &.club{
+            transform: translate(-40%, 15px);
+            max-width: 56px;
+            max-height: 65px;
+        }
+        &.diamond{
+            transform: translate(-40%, 0);
+            max-width: 56px;
+            max-height: 65px;
+        }
+        &.spade{
+            transform: translate(-40%, 7px);
+            max-width: 56px;
+            max-height: 65px;
+        }
+        &.heart{
+            transform: translate(-40%, 15px);
+            max-width: 39px;
+            max-height: 33px;
+        }
+    }
+}
