@@ -1,0 +1,193 @@
+.door-animation {
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    overflow: hidden;
+    background: #fff;
+
+    .door-animation__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cards {
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+    }
+
+    .doors {
+        position: absolute;
+        width: 110vw;
+        height: 110vh;
+        top: -5vh; left: -5vw;
+        perspective: 1500px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.door-animation-loader{
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-transform: uppercase;
+    transition: opacity 1s ease, visibility 0s linear 1s, transform 1s ease;
+
+    @include sandor{
+        font-size: 90px;
+    }
+
+    @media (max-width: 565px){
+        font-size: 60px;
+    }
+
+    span{
+        animation: fadeDot .5s ease infinite;
+        &:nth-child(1){
+            animation-delay: 0s;
+        }
+        &:nth-child(2){            
+            animation-delay: .05s;
+        }
+        &:nth-child(3){ 
+            animation-delay: .10s;
+        }
+    }
+}
+@keyframes fadeDot {
+    from{ opacity: 1;}
+    to{opacity: 0;}
+}
+
+.door-animation {
+    .doors {
+        --door-width: 28%;
+
+        @media screen and (max-aspect-ratio: 1470 / 700) {
+            --door-width: 31%;
+        }
+        @media screen and (max-aspect-ratio: 1240 / 700) {
+            --door-width: 35%;
+        }
+        @media screen and (max-aspect-ratio: 1100 / 700) {
+            --door-width: 40%;
+        }
+        @media screen and (max-aspect-ratio: 1050 / 700) {
+            --door-width: 47%;
+        }
+        @media screen and (max-aspect-ratio: 860 / 700) {
+            --door-width: 52%;
+        }
+        @media screen and (max-aspect-ratio: 770 / 700) {
+            --door-width: 55%;
+        }
+        @media screen and (max-aspect-ratio: 720 / 700) {
+            --door-width: 60%;
+        }
+        @media screen and (max-aspect-ratio: 640 / 700) {
+            --door-width: 70%;
+        }
+        @media screen and (max-aspect-ratio: 580 / 700) {
+            --door-width: 80%;
+        }
+        @media screen and (max-aspect-ratio: 520 / 700) {
+            --door-width: 90%;
+        }
+        @media screen and (max-aspect-ratio: 460 / 700) {
+            --door-width: 100%;
+        }
+        @media screen and (max-aspect-ratio: 404 / 700) {
+            --door-width: 110%;
+        }
+        @media screen and (max-aspect-ratio: 362 / 700) {
+            --door-width: 120%;
+        }
+        @media screen and (max-aspect-ratio: 330 / 700) {
+            --door-width: 130%;
+        }
+        @media screen and (max-aspect-ratio: 310 / 700) {
+            --door-width: 160%;
+        }
+        
+
+        .wall-left {
+            position: absolute;
+            left: 0; top: 0;
+            width: calc(50% - var(--door-width));
+        }
+        .wall-right {
+            position: absolute;
+            right: 0; top: 0;
+            width: calc(50% - var(--door-width));
+        }
+        // 
+        .door-left {
+            position: absolute;
+            left: calc(50% - var(--door-width)); top: 0;
+            width: var(--door-width);
+            transform-origin: left;
+        }
+        .door-right {
+            position: absolute;
+            right: calc(50% - var(--door-width)); top: 0;
+            width: var(--door-width);
+            transform-origin: right;
+        }
+
+
+    }
+}
+.door-animation {
+    --card-width: 18.7vw;
+
+    @media screen and (max-width: 850px) {
+        --card-width: 25vw;
+    }
+    @media screen and (max-width: 600px) {
+        --card-width: 35vw;
+    }
+
+    .cards [class*="card"] {
+        position: absolute;
+        width: var(--card-width);
+        top: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .card-1 {
+        left: calc(50% - var(--card-width) / 2 - 14%);
+        img {
+            transform: rotate(-15deg);
+        }
+    }
+    .card-2 {
+        left: calc(50% - var(--card-width) / 2 - 3%);
+        img {
+            transform: rotate(-5deg);
+        }
+    }
+    .card-3 {
+        left: calc(50% - var(--card-width) / 2 + 3%);
+        img {
+            transform: rotate(5deg);
+        }
+    }
+    .card-4 {
+        left: calc(50% - var(--card-width) / 2 + 14%);
+        img {
+            transform: rotate(15deg);
+        }
+    }
+}

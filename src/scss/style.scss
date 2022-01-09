@@ -1,0 +1,80 @@
+@import "reset.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    max-width: 100%;
+    min-height: 100vh;
+
+    background: transparent;
+    // background-image: url("../assets/images/clouds-background-2.png");
+    background-size: 100vw auto;
+    background-repeat: repeat;
+    background-position: center 2550px;
+
+    @include mazzard(400); 
+
+    display: flex;
+    flex-direction: column;    
+
+    & > *{
+        position: relative;
+        z-index: 3;
+    }
+}
+.container{  
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1445px;
+
+    @media (max-width: 991px){
+        padding: 0 25px;
+    }
+    @media (max-width: 565px){
+        padding: 0 15px;
+    }
+}
+.first-section{
+    max-width: 100%;
+    overflow: hidden;
+}
+.stars{
+    position: absolute;
+    left: 0;
+    top: 109px;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+
+    @media (max-width: 991px){
+        flex-shrink: 0;
+        top: 250px;
+        object-fit: none;
+        object-position: center;
+    }
+}
+
+@import "./components/header.scss";
+@import "./components/hero.scss";
+@import "./components/mouths.scss";
+@import "./components/moveline-card.scss";
+@import "./components/society.scss";
+@import "./components/court.scss";
+@import "./components/roadmap.scss";
+@import "./components/moveline-card2.scss";
+@import "./components/artist.scss";
+@import "./components/faq.scss";
+@import "./components/footer.scss";
+@import "./components/door-animation.scss";
